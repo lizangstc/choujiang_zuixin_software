@@ -65,3 +65,14 @@ D:\C and C++ coding\Lucky Draw\Lucky Draw\obj\Debug\Lucky_Draw.Properties.Resour
 D:\C and C++ coding\Lucky Draw\Lucky Draw\obj\Debug\Lucky Draw.csproj.GenerateResource.Cache
 D:\C and C++ coding\Lucky Draw\Lucky Draw\obj\Debug\抽奖系统.exe.manifest
 D:\C and C++ coding\Lucky Draw\Lucky Draw\obj\Debug\抽奖系统.application
+D:\C and C++ coding\choujiang_git\choujiang_zuixin_software\Lucky Draw\obj\Debug\抽奖系统.exe
+D:\C and C++ coding\choujiang_git\choujiang_zuixin_software\Lucky Draw\obj\Debug\抽奖系统.pdb
+D:\C and C++ coding\choujiang_git\choujiang_zuixin_software\Lucky Draw\obj\Debug\Lucky_Draw.Gy.resources
+D:\C and C++ coding\choujiang_git\choujiang_zuixin_software\Lucky Draw\obj\Debug\Lucky_Draw.Help.resources
+D:\C and C++ coding\choujiang_git\choujiang_zuixin_software\Lucky Draw\obj\Debug\Lucky_Draw.LD_DataManage.resources
+D:\C and C++ coding\choujiang_git\choujiang_zuixin_software\Lucky Draw\obj\Debug\Lucky_Draw.LD_Main.resources
+D:\C and C++ coding\choujiang_git\choujiang_zuixin_software\Lucky Draw\obj\Debug\Lucky_Draw.LD_Setting.resources
+D:\C and C++ coding\choujiang_git\choujiang_zuixin_software\Lucky Draw\obj\Debug\Lucky_Draw.Properties.Resources.resources
+D:\C and C++ coding\choujiang_git\choujiang_zuixin_software\Lucky Draw\obj\Debug\Lucky Draw.csproj.GenerateResource.Cache
+D:\C and C++ coding\choujiang_git\choujiang_zuixin_software\Lucky Draw\obj\Debug\抽奖系统.exe.manifest
+D:\C and C++ coding\choujiang_git\choujiang_zuixin_software\Lucky Draw\obj\Debug\抽奖系统.application

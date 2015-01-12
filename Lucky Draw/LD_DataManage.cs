@@ -83,20 +83,15 @@ namespace Lucky_Draw
                 }
                 for (int i = 0; i < DT.Rows.Count; i++)
                 {
-                    //sbSQL = new StringBuilder("insert into StuInfo(stuName) values('");
-                    //sbSQL.Append(DT.Rows[i]["姓名"].ToString());
-                    //sbSQL.Append( "')");
-
-                    //sbSQL3 = new StringBuilder("insert into StuInfo(CHName) values('");
-                    //sbSQL3.Append(DT.Rows[i]["工号"].ToString());
-                    //sbSQL3.Append("')");
-                    sbSQL = new StringBuilder("insert into StuInfo(stuName, CHName) values('");
+                    //sbSQL = new StringBuilder("insert into StuInfo(stuName, CHName) values('");
+                    sbSQL = new StringBuilder("insert into StuInfo(stuID, stuName, CHName) values('");
+                    sbSQL.Append(DT.Rows[i]["序号"].ToString());
+                    sbSQL.Append("','");
                     sbSQL.Append(DT.Rows[i]["工号"].ToString());
                     sbSQL.Append("','");
                     sbSQL.Append(DT.Rows[i]["姓名"].ToString());
                     sbSQL.Append("')");
 
-                    //if (DA.ExecuteSQL(sbSQL.ToString()) && DA.ExecuteSQL(sbSQL3.ToString()))
                     if (DA.ExecuteSQL(sbSQL.ToString()))
                     {
                         j++;
