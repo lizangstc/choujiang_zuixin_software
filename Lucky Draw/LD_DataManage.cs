@@ -35,7 +35,7 @@ namespace Lucky_Draw
         {
             try
             {
-                string strSQL = "select stuID as 卡号,stuName as 姓名,CHName as 工号 from StuInfo";
+                string strSQL = "select stuID as 卡号,stuName as 工号,CHName as 姓名 from StuInfo";
                 DataTable DT = DA.GetDataTable(strSQL);
                 DG.DataSource = DT;
                 DG.Refresh();

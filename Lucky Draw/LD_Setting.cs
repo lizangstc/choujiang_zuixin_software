@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Lucky_Draw;
 
 namespace Lucky_Draw
 {
@@ -13,9 +14,10 @@ namespace Lucky_Draw
     {
         DataAccess DA = new DataAccess();
 
-        public LD_Setting()
+        public LD_Setting(LD_Main ldmain)
         {
             InitializeComponent();
+            ld = ldmain;
         }
 
         /// <summary>窗体加载事件
@@ -71,11 +73,18 @@ namespace Lucky_Draw
             if (DA.ExecuteSQL(sbSQL.ToString()))
             {
                 MessageBox.Show("修改系统基本设置成功！");
+                //add
+                //ld.InitializeComponent();
+                ld.LD_Main_Load(sender,e);
+                //Form.
+                //end
             }
             else
             {
                 MessageBox.Show("修改系统基本设置失败！");
             }
         }
+        private object sender;
+        private EventArgs e;
     }
 }

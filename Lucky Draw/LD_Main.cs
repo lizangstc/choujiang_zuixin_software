@@ -32,7 +32,8 @@ namespace Lucky_Draw
         /// <summary>窗体加载事件
         ///     <remarks></remarks>
         /// </summary>
-        private void LD_Main_Load(object sender, EventArgs e)
+        //private void LD_Main_Load(object sender, EventArgs e)
+        public void LD_Main_Load(object sender, EventArgs e)
         {
             try
             {
@@ -593,7 +594,7 @@ namespace Lucky_Draw
         /// </summary>
         private void button1_Click(object sender, EventArgs e)
         {
-            LD_Setting LDst = new LD_Setting();
+            LD_Setting LDst = new LD_Setting(this);
             LDst.ShowDialog();
         }
 
@@ -667,7 +668,7 @@ namespace Lucky_Draw
 
         private void 基本设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LD_Setting LDst = new LD_Setting();
+            LD_Setting LDst = new LD_Setting(this);
             LDst.ShowDialog();
         }
 
