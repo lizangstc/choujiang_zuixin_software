@@ -50,10 +50,6 @@ E:\电子书\抽奖系统.exe.manifest
 E:\电子书\抽奖系统.application
 E:\电子书\抽奖系统.exe
 E:\电子书\抽奖系统.pdb
-E:\电子书\抽奖系统\抽奖系统.exe.manifest
-E:\电子书\抽奖系统\抽奖系统.application
-E:\电子书\抽奖系统\抽奖系统.exe
-E:\电子书\抽奖系统\抽奖系统.pdb
 D:\C and C++ coding\Lucky Draw\Lucky Draw\obj\Debug\抽奖系统.exe
 D:\C and C++ coding\Lucky Draw\Lucky Draw\obj\Debug\抽奖系统.pdb
 D:\C and C++ coding\Lucky Draw\Lucky Draw\obj\Debug\Lucky_Draw.Gy.resources
@@ -65,8 +61,10 @@ D:\C and C++ coding\Lucky Draw\Lucky Draw\obj\Debug\Lucky_Draw.Properties.Resour
 D:\C and C++ coding\Lucky Draw\Lucky Draw\obj\Debug\Lucky Draw.csproj.GenerateResource.Cache
 D:\C and C++ coding\Lucky Draw\Lucky Draw\obj\Debug\抽奖系统.exe.manifest
 D:\C and C++ coding\Lucky Draw\Lucky Draw\obj\Debug\抽奖系统.application
-D:\C and C++ coding\choujiang_git\choujiang_zuixin_software\Lucky Draw\obj\Debug\抽奖系统.exe
-D:\C and C++ coding\choujiang_git\choujiang_zuixin_software\Lucky Draw\obj\Debug\抽奖系统.pdb
+E:\电子书\抽奖系统\抽奖系统.exe.manifest
+E:\电子书\抽奖系统\抽奖系统.application
+E:\电子书\抽奖系统\抽奖系统.exe
+E:\电子书\抽奖系统\抽奖系统.pdb
 D:\C and C++ coding\choujiang_git\choujiang_zuixin_software\Lucky Draw\obj\Debug\Lucky_Draw.Gy.resources
 D:\C and C++ coding\choujiang_git\choujiang_zuixin_software\Lucky Draw\obj\Debug\Lucky_Draw.Help.resources
 D:\C and C++ coding\choujiang_git\choujiang_zuixin_software\Lucky Draw\obj\Debug\Lucky_Draw.LD_DataManage.resources
@@ -76,3 +74,5 @@ D:\C and C++ coding\choujiang_git\choujiang_zuixin_software\Lucky Draw\obj\Debug
 D:\C and C++ coding\choujiang_git\choujiang_zuixin_software\Lucky Draw\obj\Debug\Lucky Draw.csproj.GenerateResource.Cache
 D:\C and C++ coding\choujiang_git\choujiang_zuixin_software\Lucky Draw\obj\Debug\抽奖系统.exe.manifest
 D:\C and C++ coding\choujiang_git\choujiang_zuixin_software\Lucky Draw\obj\Debug\抽奖系统.application
+D:\C and C++ coding\choujiang_git\choujiang_zuixin_software\Lucky Draw\obj\Debug\抽奖系统.exe
+D:\C and C++ coding\choujiang_git\choujiang_zuixin_software\Lucky Draw\obj\Debug\抽奖系统.pdb

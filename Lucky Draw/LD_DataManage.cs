@@ -75,6 +75,7 @@ namespace Lucky_Draw
             try
             {
                 DataTable DT = DA.LendInDT(txtFile.Text.Trim());
+                int flag = 0;
                 int j = 0; int k = 0;
                 sbSQL2 = new StringBuilder("delete from AwardsInfo");
                 if (DA.ExecuteSQL(sbSQL2.ToString()))
@@ -83,6 +84,24 @@ namespace Lucky_Draw
                 }
                 for (int i = 0; i < DT.Rows.Count; i++)
                 {
+                    //get data from datasheet
+                    string strSQL = "select stuID as 卡号,stuName as 工号,CHName as 姓名 from StuInfo";
+                    DataTable DT2 = DA.GetDataTable(strSQL);
+                    for (j = 0; j < DT2.Rows.Count; j++)
+                    {
+                        //sbSQL3.Append(DT.Rows[i]["工号"]);
+                        //sbSQL3.Append(DT2.Rows[j]["工号"]);
+                        //int a = (int)(DT2.Rows[j]["stuName"]);
+                        String a = DT2.Rows[j]["工号"].ToString();
+                        String b = DT.Rows[i]["工号"].ToString();
+                        if (a == b)
+                            flag = 1;
+                    }
+                    if (1 == flag )
+                    {
+                        flag = 0;
+                        continue;
+                    }
                     //sbSQL = new StringBuilder("insert into StuInfo(stuName, CHName) values('");
                     sbSQL = new StringBuilder("insert into StuInfo(stuID, stuName, CHName) values('");
                     sbSQL.Append(DT.Rows[i]["序号"].ToString());
