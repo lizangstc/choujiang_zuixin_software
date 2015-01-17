@@ -264,11 +264,12 @@ namespace Lucky_Draw
             {
                 //get the num from leaddatasheet
                 randata = RanNum.Next(leadCount);
-                string strSQL2 = "select stuID, stuName from LeadInfo";
+                string strSQL2 = "select stuID, stuName, CHName from LeadInfo";
                 DataTable DT_temp2 = DA.GetDataTable(strSQL2);
                 this.lblClass.Text = DT_temp2.Rows[randata]["stuID"].ToString();
                 lblName.Text = DT_temp2.Rows[randata]["stuName"].ToString();
-                this.lblID.Text = lblName.Text;
+                //this.lblID.Text = lblName.Text;
+                this.lblID.Text = lblName.Text + "  " +DT_temp2.Rows[randata]["CHName"].ToString();
             }
             else
             {
@@ -276,7 +277,8 @@ namespace Lucky_Draw
                 randata = RanNum.Next(stuCount);
                 this.lblClass.Text = DT_stu.Rows[randata]["stuID"].ToString();
                 lblName.Text = DT_stu.Rows[randata]["stuName"].ToString();
-                this.lblID.Text = lblName.Text;
+                //this.lblID.Text = lblName.Text;
+                this.lblID.Text = lblName.Text + "  " + DT_stu.Rows[randata]["CHName"].ToString();
             }
 
         }
