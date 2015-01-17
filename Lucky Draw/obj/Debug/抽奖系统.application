@@ -3,15 +3,18 @@
   <assemblyIdentity name="抽奖系统.application" version="1.0.0.6" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <description asmv2:publisher="抽奖系统" asmv2:product="抽奖系统" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
+  <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
+    <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
+  </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="抽奖系统.exe.manifest" size="3483">
+    <dependentAssembly dependencyType="install" codebase="抽奖系统.exe.manifest" size="3867">
       <assemblyIdentity name="抽奖系统.exe" version="1.0.0.6" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>ks6pEQJ9I0Vu3AwVEz1PBcFW3+0=</dsig:DigestValue>
+        <dsig:DigestValue>gU36BY4EPovhh4fYbXQA3mtUfKA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

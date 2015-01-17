@@ -35,7 +35,7 @@ namespace Lucky_Draw
         {
             try
             {
-                string strSQL = "select stuID as 卡号,stuName as 姓名,CHName as 工号 from StuInfo";
+                string strSQL = "select stuID as 卡号,stuName as 工号,CHName as 姓名 from StuInfo";
                 DataTable DT = DA.GetDataTable(strSQL);
                 DG.DataSource = DT;
                 DG.Refresh();
@@ -84,17 +84,34 @@ namespace Lucky_Draw
                 for (int i = 0; i < DT.Rows.Count; i++)
                 {
                     //sbSQL = new StringBuilder("insert into StuInfo(stuName, CHName) values('");
-                    sbSQL = new StringBuilder("insert into StuInfo(stuID, stuName, CHName) values('");
-                    sbSQL.Append(DT.Rows[i]["序号"].ToString());
-                    sbSQL.Append("','");
-                    sbSQL.Append(DT.Rows[i]["工号"].ToString());
-                    sbSQL.Append("','");
-                    sbSQL.Append(DT.Rows[i]["姓名"].ToString());
-                    sbSQL.Append("')");
+                    String a = DT.Rows[i]["序号"].ToString();
+                    int temp = Int32.Parse(a);
 
-                    if (DA.ExecuteSQL(sbSQL.ToString()))
+                    if (temp >= 1000)
                     {
-                        j++;
+                        sbSQL2 = new StringBuilder("insert into LeadInfo(stuID, stuName, CHName) values('");
+                        sbSQL2.Append(DT.Rows[i]["序号"].ToString());
+                        sbSQL2.Append("','");
+                        sbSQL2.Append(DT.Rows[i]["工号"].ToString());
+                        sbSQL2.Append("','");
+                        sbSQL2.Append(DT.Rows[i]["姓名"].ToString());
+                        sbSQL2.Append("')");
+                        DA.ExecuteSQL(sbSQL2.ToString());
+                    }
+                    else
+                    {
+                        sbSQL = new StringBuilder("insert into StuInfo(stuID, stuName, CHName) values('");
+                        sbSQL.Append(DT.Rows[i]["序号"].ToString());
+                        sbSQL.Append("','");
+                        sbSQL.Append(DT.Rows[i]["工号"].ToString());
+                        sbSQL.Append("','");
+                        sbSQL.Append(DT.Rows[i]["姓名"].ToString());
+                        sbSQL.Append("')");
+
+                        if (DA.ExecuteSQL(sbSQL.ToString()))
+                        {
+                            j++;
+                        }
                     }
                 }
                 MessageBox.Show("导入数据成功，共导入" + j.ToString() + "条记录！");

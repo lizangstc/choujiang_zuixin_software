@@ -365,5 +365,6 @@
         private System.Windows.Forms.TextBox txtT3;
         private System.Windows.Forms.TextBox txtTL;
         private System.Windows.Forms.TextBox txtT5;
+        private LD_Main ld;
     }
 }
