@@ -584,6 +584,9 @@ namespace Lucky_Draw
             strGrade = "特等奖";
             Awa_View();
             btnBegin.Focus();
+            if(imageList1.Images.Count > 0){
+                pictureBox1.Image = imageList1.Images[0];
+            }
         }
 
         /// <summary>单选按钮选中事件——一等奖
@@ -595,6 +598,10 @@ namespace Lucky_Draw
             strGrade = "一等奖";
             Awa_View();
             btnBegin.Focus();
+            if (imageList1.Images.Count > 1)
+            {
+                pictureBox1.Image = imageList1.Images[1];
+            }
         }
 
         /// <summary>单选按钮选中事件——二等奖
@@ -606,6 +613,10 @@ namespace Lucky_Draw
             strGrade = "二等奖";
             Awa_View();
             btnBegin.Focus();
+            if (imageList1.Images.Count > 2)
+            {
+                pictureBox1.Image = imageList1.Images[2];
+            }
         }
 
         /// <summary>单选按钮选中事件——三运奖
@@ -617,7 +628,10 @@ namespace Lucky_Draw
             strGrade = "三等奖";
             Awa_View();
             btnBegin.Focus();
-
+            if (imageList1.Images.Count > 3)
+            {
+                pictureBox1.Image = imageList1.Images[3];
+            }
         }
 
        

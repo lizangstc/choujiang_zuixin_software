@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="抽奖系统.exe" size="788992">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="抽奖系统.exe" size="2327040">
       <assemblyIdentity name="抽奖系统" version="2.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>4qxC86JxvMel2uFsQN/XEHFU8lE=</dsig:DigestValue>
+        <dsig:DigestValue>YuGfD7jObVrolJ+6RmNoHL2QiUA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

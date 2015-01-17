@@ -78,18 +78,21 @@
             this.rdbL = new System.Windows.Forms.RadioButton();
             this.rad5 = new System.Windows.Forms.RadioButton();
             this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblGrade
             // 
             this.lblGrade.BackColor = System.Drawing.Color.Transparent;
-            this.lblGrade.Font = new System.Drawing.Font("LiSu", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblGrade.Font = new System.Drawing.Font("隶书", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblGrade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lblGrade.Location = new System.Drawing.Point(440, 332);
+            this.lblGrade.Location = new System.Drawing.Point(435, 225);
             this.lblGrade.Name = "lblGrade";
             this.lblGrade.Size = new System.Drawing.Size(181, 56);
             this.lblGrade.TabIndex = 59;
@@ -99,7 +102,7 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.lsbAwaList);
-            this.groupBox1.Font = new System.Drawing.Font("SimSun", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupBox1.ForeColor = System.Drawing.Color.Yellow;
             this.groupBox1.Location = new System.Drawing.Point(728, 117);
             this.groupBox1.Name = "groupBox1";
@@ -111,7 +114,7 @@
             // lsbAwaList
             // 
             this.lsbAwaList.BackColor = System.Drawing.Color.Red;
-            this.lsbAwaList.Font = new System.Drawing.Font("SimSun", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lsbAwaList.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lsbAwaList.ForeColor = System.Drawing.Color.Transparent;
             this.lsbAwaList.ItemHeight = 20;
             this.lsbAwaList.Location = new System.Drawing.Point(6, 20);
@@ -132,7 +135,7 @@
             // lblID
             // 
             this.lblID.BackColor = System.Drawing.Color.Transparent;
-            this.lblID.Font = new System.Drawing.Font("SimHei", 32.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblID.Font = new System.Drawing.Font("黑体", 32.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblID.ForeColor = System.Drawing.Color.White;
             this.lblID.Location = new System.Drawing.Point(3, 11);
             this.lblID.Name = "lblID";
@@ -173,7 +176,7 @@
             // lblTitle
             // 
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft YaHei", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblTitle.Font = new System.Drawing.Font("微软雅黑", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(0, 25);
             this.lblTitle.Name = "lblTitle";
@@ -185,7 +188,7 @@
             // lblTitle2
             // 
             this.lblTitle2.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle2.Font = new System.Drawing.Font("Microsoft YaHei", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblTitle2.Font = new System.Drawing.Font("微软雅黑", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblTitle2.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.lblTitle2.Location = new System.Drawing.Point(0, 68);
             this.lblTitle2.Name = "lblTitle2";
@@ -232,55 +235,55 @@
             this.帮助ToolStripMenuItem,
             this.退出ToolStripMenuItem});
             this.系统设置ToolStripMenuItem.Name = "系统设置ToolStripMenuItem";
-            this.系统设置ToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.系统设置ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.系统设置ToolStripMenuItem.Text = "系统设置";
             // 
             // 重新开始ToolStripMenuItem
             // 
             this.重新开始ToolStripMenuItem.Name = "重新开始ToolStripMenuItem";
-            this.重新开始ToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.重新开始ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.重新开始ToolStripMenuItem.Text = "重新开始";
             this.重新开始ToolStripMenuItem.Click += new System.EventHandler(this.重新开始ToolStripMenuItem_Click);
             // 
             // 基本设置ToolStripMenuItem
             // 
             this.基本设置ToolStripMenuItem.Name = "基本设置ToolStripMenuItem";
-            this.基本设置ToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.基本设置ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.基本设置ToolStripMenuItem.Text = "基本设置";
             this.基本设置ToolStripMenuItem.Click += new System.EventHandler(this.基本设置ToolStripMenuItem_Click);
             // 
             // 数据管理ToolStripMenuItem
             // 
             this.数据管理ToolStripMenuItem.Name = "数据管理ToolStripMenuItem";
-            this.数据管理ToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.数据管理ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.数据管理ToolStripMenuItem.Text = "数据管理";
             this.数据管理ToolStripMenuItem.Click += new System.EventHandler(this.数据管理ToolStripMenuItem_Click);
             // 
             // 导出结果ToolStripMenuItem
             // 
             this.导出结果ToolStripMenuItem.Name = "导出结果ToolStripMenuItem";
-            this.导出结果ToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.导出结果ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.导出结果ToolStripMenuItem.Text = "导出结果";
             this.导出结果ToolStripMenuItem.Click += new System.EventHandler(this.导出结果ToolStripMenuItem_Click);
             // 
             // 关于ToolStripMenuItem
             // 
             this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
-            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.关于ToolStripMenuItem.Text = "关于";
             this.关于ToolStripMenuItem.Click += new System.EventHandler(this.关于ToolStripMenuItem_Click);
             // 
             // 帮助ToolStripMenuItem
             // 
             this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
-            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.帮助ToolStripMenuItem.Text = "帮助";
             this.帮助ToolStripMenuItem.Click += new System.EventHandler(this.帮助ToolStripMenuItem_Click_1);
             // 
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
@@ -315,11 +318,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("SimSun", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label8.Location = new System.Drawing.Point(144, 122);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(29, 30);
+            this.label8.Size = new System.Drawing.Size(30, 30);
             this.label8.TabIndex = 99;
             this.label8.Text = "名";
             this.label8.UseCompatibleTextRendering = true;
@@ -327,11 +330,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("SimSun", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label4.Location = new System.Drawing.Point(144, 94);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 30);
+            this.label4.Size = new System.Drawing.Size(30, 30);
             this.label4.TabIndex = 98;
             this.label4.Text = "名";
             this.label4.UseCompatibleTextRendering = true;
@@ -340,11 +343,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("SimSun", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label3.Location = new System.Drawing.Point(144, 64);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 30);
+            this.label3.Size = new System.Drawing.Size(30, 30);
             this.label3.TabIndex = 97;
             this.label3.Text = "名";
             this.label3.UseCompatibleTextRendering = true;
@@ -352,11 +355,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("SimSun", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label2.Location = new System.Drawing.Point(144, 36);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 30);
+            this.label2.Size = new System.Drawing.Size(30, 30);
             this.label2.TabIndex = 96;
             this.label2.Text = "名";
             this.label2.UseCompatibleTextRendering = true;
@@ -364,11 +367,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("SimSun", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label1.Location = new System.Drawing.Point(144, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 30);
+            this.label1.Size = new System.Drawing.Size(30, 30);
             this.label1.TabIndex = 95;
             this.label1.Text = "名";
             this.label1.UseCompatibleTextRendering = true;
@@ -376,7 +379,7 @@
             // lblT5
             // 
             this.lblT5.AutoSize = true;
-            this.lblT5.Font = new System.Drawing.Font("SimSun", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblT5.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblT5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lblT5.Location = new System.Drawing.Point(176, 122);
             this.lblT5.Name = "lblT5";
@@ -387,7 +390,7 @@
             // lblTL
             // 
             this.lblTL.AutoSize = true;
-            this.lblTL.Font = new System.Drawing.Font("SimSun", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblTL.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblTL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lblTL.Location = new System.Drawing.Point(176, 95);
             this.lblTL.Name = "lblTL";
@@ -398,7 +401,7 @@
             // lblT3
             // 
             this.lblT3.AutoSize = true;
-            this.lblT3.Font = new System.Drawing.Font("SimSun", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblT3.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblT3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lblT3.Location = new System.Drawing.Point(176, 65);
             this.lblT3.Name = "lblT3";
@@ -409,7 +412,7 @@
             // lblT2
             // 
             this.lblT2.AutoSize = true;
-            this.lblT2.Font = new System.Drawing.Font("SimSun", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblT2.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblT2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lblT2.Location = new System.Drawing.Point(176, 36);
             this.lblT2.Name = "lblT2";
@@ -420,7 +423,7 @@
             // lblT1
             // 
             this.lblT1.AutoSize = true;
-            this.lblT1.Font = new System.Drawing.Font("SimSun", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblT1.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblT1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lblT1.Location = new System.Drawing.Point(176, 7);
             this.lblT1.Name = "lblT1";
@@ -431,7 +434,7 @@
             // lbl5
             // 
             this.lbl5.AutoSize = true;
-            this.lbl5.Font = new System.Drawing.Font("SimSun", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl5.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lbl5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lbl5.Location = new System.Drawing.Point(115, 124);
             this.lbl5.Name = "lbl5";
@@ -442,7 +445,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("SimSun", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label7.Location = new System.Drawing.Point(36, 124);
             this.label7.Name = "label7";
@@ -453,7 +456,7 @@
             // lblGL
             // 
             this.lblGL.AutoSize = true;
-            this.lblGL.Font = new System.Drawing.Font("SimSun", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblGL.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblGL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lblGL.Location = new System.Drawing.Point(115, 94);
             this.lblGL.Name = "lblGL";
@@ -464,7 +467,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("SimSun", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label5.Location = new System.Drawing.Point(36, 94);
             this.label5.Name = "label5";
@@ -475,7 +478,7 @@
             // lblG3
             // 
             this.lblG3.AutoSize = true;
-            this.lblG3.Font = new System.Drawing.Font("SimSun", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblG3.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblG3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lblG3.Location = new System.Drawing.Point(115, 65);
             this.lblG3.Name = "lblG3";
@@ -486,7 +489,7 @@
             // lblG2
             // 
             this.lblG2.AutoSize = true;
-            this.lblG2.Font = new System.Drawing.Font("SimSun", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblG2.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblG2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lblG2.Location = new System.Drawing.Point(115, 35);
             this.lblG2.Name = "lblG2";
@@ -497,7 +500,7 @@
             // lblG1
             // 
             this.lblG1.AutoSize = true;
-            this.lblG1.Font = new System.Drawing.Font("SimSun", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblG1.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblG1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lblG1.Location = new System.Drawing.Point(115, 7);
             this.lblG1.Name = "lblG1";
@@ -508,7 +511,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("SimSun", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label10.Location = new System.Drawing.Point(36, 65);
             this.label10.Name = "label10";
@@ -519,7 +522,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("SimSun", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label9.Location = new System.Drawing.Point(36, 35);
             this.label9.Name = "label9";
@@ -530,7 +533,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("SimSun", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label6.Location = new System.Drawing.Point(36, 7);
             this.label6.Name = "label6";
@@ -541,7 +544,7 @@
             // rdb1
             // 
             this.rdb1.BackColor = System.Drawing.Color.Transparent;
-            this.rdb1.Font = new System.Drawing.Font("SimSun", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.rdb1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.rdb1.Location = new System.Drawing.Point(163, 432);
             this.rdb1.Name = "rdb1";
             this.rdb1.Size = new System.Drawing.Size(98, 24);
@@ -553,7 +556,7 @@
             // rdb2
             // 
             this.rdb2.BackColor = System.Drawing.Color.Transparent;
-            this.rdb2.Font = new System.Drawing.Font("SimSun", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.rdb2.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.rdb2.Location = new System.Drawing.Point(162, 455);
             this.rdb2.Name = "rdb2";
             this.rdb2.Size = new System.Drawing.Size(104, 24);
@@ -565,7 +568,7 @@
             // rdb3
             // 
             this.rdb3.BackColor = System.Drawing.Color.Transparent;
-            this.rdb3.Font = new System.Drawing.Font("SimSun", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.rdb3.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.rdb3.Location = new System.Drawing.Point(163, 478);
             this.rdb3.Name = "rdb3";
             this.rdb3.Size = new System.Drawing.Size(99, 24);
@@ -577,7 +580,7 @@
             // rdbL
             // 
             this.rdbL.BackColor = System.Drawing.Color.Transparent;
-            this.rdbL.Font = new System.Drawing.Font("SimSun", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.rdbL.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.rdbL.Location = new System.Drawing.Point(163, 502);
             this.rdbL.Name = "rdbL";
             this.rdbL.Size = new System.Drawing.Size(92, 24);
@@ -590,7 +593,7 @@
             // 
             this.rad5.BackColor = System.Drawing.Color.Transparent;
             this.rad5.Checked = true;
-            this.rad5.Font = new System.Drawing.Font("SimSun", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.rad5.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.rad5.Location = new System.Drawing.Point(163, 528);
             this.rad5.Name = "rad5";
             this.rad5.Size = new System.Drawing.Size(103, 24);
@@ -603,12 +606,31 @@
             // label11
             // 
             this.label11.BackColor = System.Drawing.Color.OrangeRed;
-            this.label11.Font = new System.Drawing.Font("YouYuan", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label11.Font = new System.Drawing.Font("幼圆", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label11.Location = new System.Drawing.Point(812, 65);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(200, 20);
             this.label11.TabIndex = 80;
             this.label11.Text = "制作人: CRM组 李赞 田虎辉";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Red;
+            this.pictureBox1.Location = new System.Drawing.Point(391, 276);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(250, 250);
+            this.pictureBox1.TabIndex = 81;
+            this.pictureBox1.TabStop = false;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "37.jpg");
+            this.imageList1.Images.SetKeyName(1, "67_324_8d76212388b13a6.jpg");
+            this.imageList1.Images.SetKeyName(2, "130R9133017-4.jpg");
+            this.imageList1.Images.SetKeyName(3, "20121211093519_sXhC2_thumb_600_0.jpg");
+            this.imageList1.Images.SetKeyName(4, "42a98226cffc1e17fc7630464890f603728de9f8.jpg");
             // 
             // LD_Main
             // 
@@ -616,6 +638,7 @@
             this.BackColor = System.Drawing.Color.Red;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1014, 732);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.rad5);
             this.Controls.Add(this.rdbL);
@@ -651,6 +674,7 @@
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -706,5 +730,7 @@
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
