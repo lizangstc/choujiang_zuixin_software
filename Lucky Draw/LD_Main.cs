@@ -19,12 +19,15 @@ namespace Lucky_Draw
         private DataTable DT_sys;//系统表
         private DataTable DT_lead;
         private int stuCount;//员工总数
+        private int stuCount_no_change;
         private int leadCount;//
         private int awardGCount;
         private string strGrade;//奖项等级
         private Random RanNum;//随机数
         private int awaCount = 0;
+        private int awaCurrentCount = 0;
         private int onesNums = 1;//一次抽取的人数，默认为1个
+        private int third_lead_appear_time_num = 0;
        // private ArrayList list = new ArrayList();
 
         public LD_Main()
@@ -61,6 +64,7 @@ namespace Lucky_Draw
                 Set_LeadCount();
                 Awa_View();
                 btnOpen.Enabled = false;
+                third_lead_appear_time_num = Convert.ToInt32(lblG1.Text.Trim()) + Convert.ToInt32(lblG2.Text.Trim());
 
                 //添加音乐
                 System.Media.SoundPlayer sndPlayer = new System.Media.SoundPlayer(Application.StartupPath + @"/pm3.wav");
@@ -122,6 +126,7 @@ namespace Lucky_Draw
             string strSQL = "select * from StuInfo";
             DT_stu = DA.GetDataTable(strSQL);
             stuCount = DT_stu.Rows.Count;
+            stuCount_no_change = stuCount;
             DataAccess.DataIsChange = false;
         }
 
@@ -239,11 +244,11 @@ namespace Lucky_Draw
             //add
             int awaGCount = 0;
             /*get the num of awardinfo*/
-            string strSQL = "select stuID from AwardsInfo";
-            DataTable DT_temp = DA.GetDataTable(strSQL);
-            awaCount = DT_temp.Rows.Count;
+            //string strSQL = "select stuID from AwardsInfo";
+            //DataTable DT_temp = DA.GetDataTable(strSQL);
+            //awaCount = DT_temp.Rows.Count;
 
-            for (int t = 0; t < awaCount; t++)
+            for (int t = 0; t < awaCurrentCount; t++)
             {
                 if (awardGCount >= 2)
                 {
@@ -255,7 +260,7 @@ namespace Lucky_Draw
                 }
             }
             //awardGCount = awaGCount;
-            if (0 == awaCount || 1 == awaCount)
+            if (0 == awaCurrentCount || 1 == awaCurrentCount || third_lead_appear_time_num == awaCurrentCount)
             {
                 //get the num from leaddatasheet
                 randata = RanNum.Next(leadCount);
@@ -329,18 +334,48 @@ namespace Lucky_Draw
                         return;
                     }
                  //add
-                    int awaGCount = 0;
+                    int te_awaGCount = 0;
+                    int yi_awaGCount = 0;
+                    int er_awaGCount = 0;
+                    int san_awaGCount = 0;
                     awaCount = lsbAwaList.Items.Count;
                     for (int t = 0; t < awaCount; t++)
                     {
                         if (lsbAwaList.Items[t].ToString().EndsWith("特等奖"))
                         {
-                            awaGCount++;
+                            te_awaGCount++;
+                        }
+                        if (lsbAwaList.Items[t].ToString().EndsWith("一等奖"))
+                        {
+                            yi_awaGCount++;
+                        }
+                        if (lsbAwaList.Items[t].ToString().EndsWith("二等奖"))
+                        {
+                            er_awaGCount++;
+                        }
+                        if (lsbAwaList.Items[t].ToString().EndsWith("三等奖"))
+                        {
+                            san_awaGCount++;
                         }
                     }
-                    if (awaGCount >= Convert.ToInt32(lblG1.Text.Trim()))
+                    if (te_awaGCount >= Convert.ToInt32(lblG1.Text.Trim()))
                     {
                         MessageBox.Show("特等奖已经抽取完毕，请抽取其它奖项！！");
+                        return;
+                    }
+                    if (yi_awaGCount >= Convert.ToInt32(lblG2.Text.Trim()))
+                    {
+                        MessageBox.Show("一等奖已经抽取完毕，请抽取其它奖项！！");
+                        return;
+                    }
+                    if (er_awaGCount >= Convert.ToInt32(lblG3.Text.Trim()))
+                    {
+                        MessageBox.Show("二等奖已经抽取完毕，请抽取其它奖项！！");
+                        return;
+                    }
+                    if (san_awaGCount >= Convert.ToInt32(lblGL.Text.Trim()))
+                    {
+                        MessageBox.Show("三等奖已经抽取完毕，请抽取其它奖项！！");
                         return;
                     }
                  //end
@@ -370,26 +405,57 @@ namespace Lucky_Draw
             {
                 string strSQL = "select stuID from AwardsInfo";
                 DataTable DT_temp = DA.GetDataTable(strSQL);
-                if (DT_temp.Rows.Count >= stuCount)
+                if (DT_temp.Rows.Count >= stuCount_no_change)
                 {
                     timLD.Stop();
                     lblID.ForeColor = Color.Red;
                     lblID.Text = "所有人都已经获奖了!";
+                    awaCurrentCount = 0;
                     return;
                 }
-                while (!Awa_Chk())
-                {
-                    int randata;
-                    RanNum = new Random((int)DateTime.Now.Ticks);
-                    randata = RanNum.Next(stuCount);
-                    lblClass.Text = DT_stu.Rows[randata]["stuID"].ToString();
-                    lblName.Text = DT_stu.Rows[randata]["stuName"].ToString();
-                    this.lblID.Text = lblName.Text;
-                }
-                int awaGCount = 0, i;
+                //while (!Awa_Chk())
+                //{
+                //    int randata;
+                //    RanNum = new Random((int)DateTime.Now.Ticks);
+                //    randata = RanNum.Next(stuCount);
+                //    lblClass.Text = DT_stu.Rows[randata]["stuID"].ToString();
+                //    lblName.Text = DT_stu.Rows[randata]["stuName"].ToString();
+                //    this.lblID.Text = lblName.Text;
+                //}
+                //add
                 timLD.Stop();
+                awaCurrentCount++;
                 btnOpen.Enabled = false;
+                if (awardGCount < 2 || third_lead_appear_time_num + 1 == awaCurrentCount)
+                {
+                    StringBuilder sbSQL = new StringBuilder();
+                    sbSQL = new StringBuilder("delete from LeadInfo where stuID=");
+                    //sbSQL.Append(int.Parse(DG.CurrentRow.Cells[0].Value.ToString()));
+                    //sbSQL.Append(int.Parse(lblName.Text.Trim()));
+                    sbSQL.Append(int.Parse(lblClass.Text.Trim()));
+                    DA.ExecuteSQL(sbSQL.ToString());
+                    leadCount--;
+                }
+                else
+                {
+                    StringBuilder sbSQL = new StringBuilder();
+                    sbSQL = new StringBuilder("delete from StuInfo where stuID=");
+                    //sbSQL.Append(int.Parse(DG.CurrentRow.Cells[0].Value.ToString()));
+                    sbSQL.Append(int.Parse(lblClass.Text.Trim()));
+                    DA.ExecuteSQL(sbSQL.ToString());
+                    stuCount--;
+                }
+                //end
+                int awaGCount = 0, i;
+                //timLD.Stop();
+                //btnOpen.Enabled = false;
                 awaCount = lsbAwaList.Items.Count;
+
+                //add
+                strSQL = "select * from StuInfo";
+                DT_stu = DA.GetDataTable(strSQL);
+                //end
+
                 //lblID.ForeColor = Color.Red;
                 if (rdb1.Checked == true)
                 {
@@ -407,58 +473,17 @@ namespace Lucky_Draw
                     }
                     else
                     {
-                        //getotwo("aa");
-                        //if(){
-                        //    Awa_Save(lblClass.Text.Trim(), lblName.Text.Trim(), lblGrade.Text.Trim());
-                        //    strGrade = "特等奖";
-                        //}
-                        //add
-                        //if (0 == awaGCount)
-                        //{
-                        //    string strSQL2 = "select stuID, stuName from LeadInfo";
-                        //    DataTable DT_temp2 = DA.GetDataTable(strSQL2);
-                        //    lblClass.Text = DT_temp2.Rows[0]["stuID"].ToString();
-                        //    lblName.Text = DT_temp2.Rows[0]["stuName"].ToString();
-                        //    lblID.Text = lblName.Text;
-                        //}
-                        //else if (1 == awaGCount)
-                        //{
-                        //    string strSQL2 = "select stuID, stuName from LeadInfo";
-                        //    DataTable DT_temp2 = DA.GetDataTable(strSQL2);
-                        //    lblClass.Text = DT_temp2.Rows[1]["stuID"].ToString();
-                        //    lblName.Text = DT_temp2.Rows[1]["stuName"].ToString();
-                        //    lblID.Text = lblName.Text;
-                        //}
-                        //end
                         Awa_Save(lblClass.Text.Trim(), lblName.Text.Trim(), lblGrade.Text.Trim());
                         strGrade = "特等奖";
                         awardGCount++;
+
+                        strSQL = "select stuID from AwardsInfo";
+                        DT_temp = DA.GetDataTable(strSQL);
+                        awaCount = DT_temp.Rows.Count;
                     }
                 }
                 else if (rdb2.Checked == true)
                 {
-                    //if(awaCount==2)
-                    //{
-                    //    //getotwo("bb");
-                    //    for (i = 0; i < awaCount; i++)
-                    //    {
-                    //        if (lsbAwaList.Items[i].ToString().EndsWith("二等奖"))
-                    //        {
-                    //            awaGCount++;
-                    //        }
-                    //    }
-                    //    if (awaGCount >= Convert.ToInt32(lblG2.Text.Trim()))
-                    //    {
-                    //        MessageBox.Show("二等奖已经抽取完毕，请抽取其它奖项！！");
-                    //    }
-                    //    else
-                    //    {
-                    //        Awa_Save(lblClass.Text.Trim(), lblName.Text.Trim(), lblGrade.Text.Trim());
-                    //        strGrade = "二等奖";
-                    //    }
-                    //}
-                    //else
-                    //{
                     for (i = 0; i < awaCount; i++)
                     {
                         if (lsbAwaList.Items[i].ToString().EndsWith("一等奖"))
@@ -479,51 +504,6 @@ namespace Lucky_Draw
                 }
                 else if (rdb3.Checked == true)
                 {
-                    //if (awaCount==1)
-                    //{
-                    //    getotwo("cc");
-                    //    for (i = 0; i < awaCount; i++)
-                    //    {
-                    //        if (lsbAwaList.Items[i].ToString().EndsWith("三等奖"))
-                    //        {
-                    //            awaGCount++;
-                    //        }
-
-                    //    }
-                    //    if (awaGCount >= Convert.ToInt32(lblG3.Text.Trim()))
-                    //    {
-                    //        MessageBox.Show("三等奖已经抽取完毕，请抽取其它奖项！！");
-                    //    }
-                    //    else
-                    //    {
-                    //        Awa_Save(lblClass.Text.Trim(), lblName.Text.Trim(), lblGrade.Text.Trim());
-                    //        strGrade = "三等奖";
-                    //    }
-                    //}
-                    //if (awaCount == 4)
-                    //{
-                    //    getotwo("dd");
-                    //    for (i = 0; i < awaCount; i++)
-                    //    {
-                    //        if (lsbAwaList.Items[i].ToString().EndsWith("三等奖"))
-                    //        {
-                    //            awaGCount++;
-                    //        }
-
-                    //    }
-                    //    if (awaGCount >= Convert.ToInt32(lblG3.Text.Trim()))
-                    //    {
-                    //        MessageBox.Show("三等奖已经抽取完毕，请抽取其它奖项！！");
-                    //    }
-                    //    else
-                    //    {
-                    //        Awa_Save(lblClass.Text.Trim(), lblName.Text.Trim(), lblGrade.Text.Trim());
-                    //        strGrade = "三等奖";
-                    //    }
-                    //}
-                    //else
-                    //{
-
                     for (i = 0; i < awaCount; i++)
                     {
                         if (lsbAwaList.Items[i].ToString().EndsWith("二等奖"))
@@ -566,29 +546,6 @@ namespace Lucky_Draw
                 }
                 else if (this.rad5.Checked == true)
                 {
-                    //if (awaCount == 7)
-                    //{
-                    //    getotwo("ee");
-                    //    for (i = 0; i < awaCount; i++)
-                    //    {
-                    //        if (lsbAwaList.Items[i].ToString().EndsWith("五等奖"))
-                    //        {
-                    //            awaGCount++;
-                    //        }
-
-                    //    }
-                    //    if (awaGCount >= Convert.ToInt32(lbl5.Text.Trim()))
-                    //    {
-                    //        MessageBox.Show("五等奖已经抽取完毕，请抽取其它奖项！！");
-                    //    }
-                    //    else
-                    //    {
-                    //        Awa_Save(lblClass.Text.Trim(), lblName.Text.Trim(), lblGrade.Text.Trim());
-                    //        strGrade = "五等奖";
-                    //    }
-                    //}
-                    //else
-                    //{
                     for (i = 0; i < awaCount; i++)
                     {
                         if (lsbAwaList.Items[i].ToString().EndsWith("幸运奖"))
@@ -672,8 +629,50 @@ namespace Lucky_Draw
             awardGCount = 0;
             string strSQL = "delete from AwardsInfo";
             DA.ExecuteSQL(strSQL);
+
+            //add by lee
+            strSQL = "delete from stuInfo";
+            DA.ExecuteSQL(strSQL);
+
+            strSQL = "delete from LeadInfo";
+            DA.ExecuteSQL(strSQL);
+
+            strSQL = "select * from StuInfobackup";
+            DT_stu = DA.GetDataTable(strSQL);
+
+            for (int i = 0; i < DT_stu.Rows.Count; i++)
+            {
+                StringBuilder sbSQL = new StringBuilder("insert into StuInfo(stuID, stuName, CHName) values('");
+                sbSQL.Append(DT_stu.Rows[i]["序号"].ToString());
+                sbSQL.Append("','");
+                sbSQL.Append(DT_stu.Rows[i]["工号"].ToString());
+                sbSQL.Append("','");
+                sbSQL.Append(DT_stu.Rows[i]["姓名"].ToString());
+                sbSQL.Append("')");
+                DA.ExecuteSQL(sbSQL.ToString());
+            }
+
+            strSQL = "select * from LeadInfobackup";
+            DT_lead = DA.GetDataTable(strSQL);
+            for (int i = 0; i < DT_lead.Rows.Count;i++ )
+            {
+                StringBuilder sbSQL = new StringBuilder("insert into LeadInfo(stuID, stuName, CHName) values('");
+                sbSQL.Append(DT_lead.Rows[i]["序号"].ToString());
+                sbSQL.Append("','");
+                sbSQL.Append(DT_lead.Rows[i]["工号"].ToString());
+                sbSQL.Append("','");
+                sbSQL.Append(DT_lead.Rows[i]["姓名"].ToString());
+                sbSQL.Append("')");
+                DA.ExecuteSQL(sbSQL.ToString());
+            }
+            //end by lee
             Set_LeadCount();
             Awa_View();
+        }
+
+        // copy date int resource to used
+        private void copy_data() { 
+
         }
 
         /// <summary>单选按钮选中事件——基本设置
@@ -748,9 +747,54 @@ namespace Lucky_Draw
         private void 重新开始ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             awaCount = 0;
+            awardGCount = 0;
+            awaCurrentCount = 0;
             string strSQL = "delete from AwardsInfo";
             DA.ExecuteSQL(strSQL);
+
+            //add by lee
+            strSQL = "delete from stuInfo";
+            DA.ExecuteSQL(strSQL);
+
+            strSQL = "delete from LeadInfo";
+            DA.ExecuteSQL(strSQL);
+
+            strSQL = "select * from StuInfobackup";
+            DT_stu = DA.GetDataTable(strSQL);
+
+            for (int i = 0; i < DT_stu.Rows.Count; i++)
+            {
+                StringBuilder sbSQL = new StringBuilder("insert into StuInfo(stuID, stuName, CHName) values('");
+                sbSQL.Append(DT_stu.Rows[i]["stuID"].ToString());
+                sbSQL.Append("','");
+                sbSQL.Append(DT_stu.Rows[i]["stuName"].ToString());
+                sbSQL.Append("','");
+                sbSQL.Append(DT_stu.Rows[i]["CHName"].ToString());
+                sbSQL.Append("')");
+                DA.ExecuteSQL(sbSQL.ToString());
+            }
+
+            strSQL = "select * from LeadInfobackup";
+            DT_lead = DA.GetDataTable(strSQL);
+            for (int i = 0; i < DT_lead.Rows.Count; i++)
+            {
+                StringBuilder sbSQL = new StringBuilder("insert into LeadInfo(stuID, stuName, CHName) values('");
+                sbSQL.Append(DT_lead.Rows[i]["stuID"].ToString());
+                sbSQL.Append("','");
+                sbSQL.Append(DT_lead.Rows[i]["stuName"].ToString());
+                sbSQL.Append("','");
+                sbSQL.Append(DT_lead.Rows[i]["CHName"].ToString());
+                sbSQL.Append("')");
+                DA.ExecuteSQL(sbSQL.ToString());
+            }
+            //end by lee
+            Set_StuCount();
+            Set_LeadCount();
             Awa_View();
+            //awaCount = 0;
+            //string strSQL = "delete from AwardsInfo";
+            //DA.ExecuteSQL(strSQL);
+            //Awa_View();
         }
 
         private void 基本设置ToolStripMenuItem_Click(object sender, EventArgs e)

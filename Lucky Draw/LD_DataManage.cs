@@ -14,6 +14,7 @@ namespace Lucky_Draw
         StringBuilder sbSQL = new StringBuilder();
         StringBuilder sbSQL2 = new StringBuilder();
         StringBuilder sbSQL3 = new StringBuilder();
+        StringBuilder sbSQL4 = new StringBuilder();
 
         public LD_DataManage()
         {
@@ -97,10 +98,28 @@ namespace Lucky_Draw
                         sbSQL2.Append(DT.Rows[i]["姓名"].ToString());
                         sbSQL2.Append("')");
                         DA.ExecuteSQL(sbSQL2.ToString());
+                        //backup the data
+                        sbSQL2 = new StringBuilder("insert into LeadInfobackup(stuID, stuName, CHName) values('");
+                        sbSQL2.Append(DT.Rows[i]["序号"].ToString());
+                        sbSQL2.Append("','");
+                        sbSQL2.Append(DT.Rows[i]["工号"].ToString());
+                        sbSQL2.Append("','");
+                        sbSQL2.Append(DT.Rows[i]["姓名"].ToString());
+                        sbSQL2.Append("')");
+                        DA.ExecuteSQL(sbSQL2.ToString());
                     }
                     else
                     {
                         sbSQL = new StringBuilder("insert into StuInfo(stuID, stuName, CHName) values('");
+                        sbSQL.Append(DT.Rows[i]["序号"].ToString());
+                        sbSQL.Append("','");
+                        sbSQL.Append(DT.Rows[i]["工号"].ToString());
+                        sbSQL.Append("','");
+                        sbSQL.Append(DT.Rows[i]["姓名"].ToString());
+                        sbSQL.Append("')");
+                        DA.ExecuteSQL(sbSQL.ToString());
+
+                        sbSQL = new StringBuilder("insert into StuInfobackup(stuID, stuName, CHName) values('");
                         sbSQL.Append(DT.Rows[i]["序号"].ToString());
                         sbSQL.Append("','");
                         sbSQL.Append(DT.Rows[i]["工号"].ToString());
@@ -232,7 +251,10 @@ namespace Lucky_Draw
                 if (MessageBox.Show("确定删除所有数据吗？", "确认删除", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.OK)
                 {
                     sbSQL = new StringBuilder("delete from StuInfo");
-                    if (DA.ExecuteSQL(sbSQL.ToString()))
+                    sbSQL2 = new StringBuilder("delete from StuInfobackup");
+                    sbSQL3 = new StringBuilder("delete from LeadInfo");
+                    sbSQL4 = new StringBuilder("delete from LeadInfobackup");
+                    if (DA.ExecuteSQL(sbSQL.ToString()) && DA.ExecuteSQL(sbSQL2.ToString()) && DA.ExecuteSQL(sbSQL3.ToString()) && DA.ExecuteSQL(sbSQL4.ToString()))
                     {
                         lblMessage.Text = "删除所有数据成功！";
                         DataAccess.DataIsChange = true;
