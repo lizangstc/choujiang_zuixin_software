@@ -92,11 +92,11 @@
             this.lblGrade.BackColor = System.Drawing.Color.Transparent;
             this.lblGrade.Font = new System.Drawing.Font("隶书", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblGrade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lblGrade.Location = new System.Drawing.Point(435, 225);
+            this.lblGrade.Location = new System.Drawing.Point(385, 225);
             this.lblGrade.Name = "lblGrade";
-            this.lblGrade.Size = new System.Drawing.Size(181, 56);
+            this.lblGrade.Size = new System.Drawing.Size(270, 56);
             this.lblGrade.TabIndex = 59;
-            this.lblGrade.Text = "幸运奖";
+            this.lblGrade.Text = "阳光普照奖";
             // 
             // groupBox1
             // 
@@ -449,9 +449,9 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label7.Location = new System.Drawing.Point(36, 124);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 21);
+            this.label7.Size = new System.Drawing.Size(142, 21);
             this.label7.TabIndex = 88;
-            this.label7.Text = "幸运奖：";
+            this.label7.Text = "阳光普照奖：";
             // 
             // lblGL
             // 

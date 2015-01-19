@@ -205,7 +205,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 12);
             this.label8.TabIndex = 16;
-            this.label8.Text = "幸运奖个数：";
+            this.label8.Text = "阳光普照奖个数：";
             // 
             // label9
             // 

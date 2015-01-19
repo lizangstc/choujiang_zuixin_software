@@ -15,6 +15,8 @@ namespace Lucky_Draw
         StringBuilder sbSQL2 = new StringBuilder();
         StringBuilder sbSQL3 = new StringBuilder();
         StringBuilder sbSQL4 = new StringBuilder();
+        StringBuilder sbSQL5 = new StringBuilder();
+        StringBuilder sbSQL6 = new StringBuilder();
 
         public LD_DataManage()
         {
@@ -88,7 +90,7 @@ namespace Lucky_Draw
                     String a = DT.Rows[i]["序号"].ToString();
                     int temp = Int32.Parse(a);
 
-                    if (temp >= 1000)
+                    if (temp >= 1000 && temp < 2000)
                     {
                         sbSQL2 = new StringBuilder("insert into LeadInfo(stuID, stuName, CHName) values('");
                         sbSQL2.Append(DT.Rows[i]["序号"].ToString());
@@ -100,6 +102,25 @@ namespace Lucky_Draw
                         DA.ExecuteSQL(sbSQL2.ToString());
                         //backup the data
                         sbSQL2 = new StringBuilder("insert into LeadInfobackup(stuID, stuName, CHName) values('");
+                        sbSQL2.Append(DT.Rows[i]["序号"].ToString());
+                        sbSQL2.Append("','");
+                        sbSQL2.Append(DT.Rows[i]["工号"].ToString());
+                        sbSQL2.Append("','");
+                        sbSQL2.Append(DT.Rows[i]["姓名"].ToString());
+                        sbSQL2.Append("')");
+                        DA.ExecuteSQL(sbSQL2.ToString());
+                    }
+                    else if(temp >= 2000){
+                        sbSQL2 = new StringBuilder("insert into Shine_Award(stuID, stuName, CHName) values('");
+                        sbSQL2.Append(DT.Rows[i]["序号"].ToString());
+                        sbSQL2.Append("','");
+                        sbSQL2.Append(DT.Rows[i]["工号"].ToString());
+                        sbSQL2.Append("','");
+                        sbSQL2.Append(DT.Rows[i]["姓名"].ToString());
+                        sbSQL2.Append("')");
+                        DA.ExecuteSQL(sbSQL2.ToString());
+
+                        sbSQL2 = new StringBuilder("insert into Shine_Awardbackup(stuID, stuName, CHName) values('");
                         sbSQL2.Append(DT.Rows[i]["序号"].ToString());
                         sbSQL2.Append("','");
                         sbSQL2.Append(DT.Rows[i]["工号"].ToString());
@@ -254,7 +275,9 @@ namespace Lucky_Draw
                     sbSQL2 = new StringBuilder("delete from StuInfobackup");
                     sbSQL3 = new StringBuilder("delete from LeadInfo");
                     sbSQL4 = new StringBuilder("delete from LeadInfobackup");
-                    if (DA.ExecuteSQL(sbSQL.ToString()) && DA.ExecuteSQL(sbSQL2.ToString()) && DA.ExecuteSQL(sbSQL3.ToString()) && DA.ExecuteSQL(sbSQL4.ToString()))
+                    sbSQL5 = new StringBuilder("delete from Shine_Award");
+                    sbSQL6 = new StringBuilder("delete from Shine_Awardbackup");
+                    if (DA.ExecuteSQL(sbSQL.ToString()) && DA.ExecuteSQL(sbSQL2.ToString()) && DA.ExecuteSQL(sbSQL3.ToString()) && DA.ExecuteSQL(sbSQL4.ToString()) && DA.ExecuteSQL(sbSQL5.ToString()) && DA.ExecuteSQL(sbSQL6.ToString()))
                     {
                         lblMessage.Text = "删除所有数据成功！";
                         DataAccess.DataIsChange = true;
